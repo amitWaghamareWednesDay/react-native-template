@@ -31,13 +31,13 @@ const Instructions = styled(T)`
   font-style: italic;
 `;
 
-function LogoWithInstructions({ instructions }) {
+function LogoWithInstructions({ instructions, logo }) {
   return (
     <>
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
-          source={images.wednesdayLogo}
+          source={logo || images.wednesdayLogo}
           resizeMode="contain"
         />
       </View>
@@ -48,7 +48,8 @@ function LogoWithInstructions({ instructions }) {
 }
 
 LogoWithInstructions.propTypes = {
-  instructions: PropTypes.string
+  instructions: PropTypes.string,
+  logo: PropTypes.string
 };
 
 export default LogoWithInstructions;
